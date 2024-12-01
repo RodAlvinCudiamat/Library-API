@@ -176,11 +176,6 @@ $app->put('/user/update/{id}', function (Request $request, Response $response, a
             'userid' => $id
         ]);
 
-        // Fetch the updated user data
-        $stmt = $conn->prepare("SELECT * FROM users WHERE userid = :userid");
-        $stmt->execute(['userid' => $id]);
-        $updatedUser  = $stmt->fetch(PDO::FETCH_ASSOC);
-
         // Generate a new token
         $key = 'server_hack';
         $iat = time();
@@ -195,10 +190,10 @@ $app->put('/user/update/{id}', function (Request $request, Response $response, a
         ];
         $jwt = JWT::encode($payload, $key, 'HS256');
 
-        // Prepare the response data
+        // Prepare the response data with data set to null
         $responseData = [
             "status" => "success",
-            "data" => $updatedUser ,
+            "data" => null, // Set data to null as per your requirement
             "token" => $jwt
         ];
 
