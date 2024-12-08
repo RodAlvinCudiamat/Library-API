@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Authors</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Manage Authors</h1>
+        <button id="logoutButton">Logout</button>
+    </header>
+
+    <main>
+        <form id="addAuthorForm">
+            <input type="text" id="authorName" placeholder="Author Name" required>
+            <button type="submit">Add Author</button>
+        </form>
+        <div id="authorMessage"></div>
+        <div>
+            <button id="fetchAuthors">Fetch Authors</button>
+            <div id="authorList"></div>
+        </div>
+        <p><a href="home.html">Back to Home</a></p>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -133,7 +133,7 @@ $TokenMiddleware = function (Request $request, Response $response, $next) {
             $stmt->execute(['token' => $token]);
         }
 
-        $request = $request->withAttribute('user', $decoded->data->userid);
+        
 
     } catch (Exception $e) {
         error_log("Token decoding error: " . $e->getMessage());
@@ -325,6 +325,7 @@ $app->post('/author/add', function (Request $request, Response $response, array 
             'iat' => $iat,
             'exp' => $iat + 3600, // Token valid for 1 hour
             "data" => array(
+                
                 "message" => "Author added successfully",
                 "author_name" => $name // Include the name of the added author
             )
@@ -422,6 +423,7 @@ $app->delete('/author/delete/{id}', function (Request $request, Response $respon
             'iat' => $iat,
             'exp' => $iat + 3600, // Token valid for 1 hour
             "data" => array(
+                
                 "message" => "Author deleted successfully",
                 "author_id" => $id // Include the ID of the deleted author
             )
@@ -468,6 +470,7 @@ $app->get('/authors', function (Request $request, Response $response, array $arg
             'iat' => $iat,
             'exp' => $iat + 3600, // Token valid for 1 hour
             "data" => array(
+                
                 "message" => "Authors fetched successfully",
                 "authors_count" => count($authors) // Include the number of authors fetched
             )
@@ -516,6 +519,7 @@ $app->post('/book/add', function (Request $request, Response $response, array $a
             'iat' => $iat,
             'exp' => $iat + 3600, // Token valid for 1 hour
             "data" => array(
+                
                 "message" => "Book added successfully",
                 "book_title" => $title // Include the title of the added book
             )
@@ -565,6 +569,7 @@ $app->put('/book/update/{id}', function (Request $request, Response $response, a
             'iat' => $iat,
             'exp' => $iat + 3600, // Token valid for 1 hour
             "data" => array(
+                
                 "message" => "Book updated successfully",
                 "book_id" => $id, // Include the ID of the updated book
                 "book_title" => $title // Include the new title of the book
@@ -613,6 +618,7 @@ $app->delete('/book/delete/{id}', function (Request $request, Response $response
             'iat' => $iat,
             'exp' => $iat + 3600, // Token valid for 1 hour
             "data" => array(
+                
                 "message" => "Book deleted successfully",
                 "book_id" => $id // Include the ID of the deleted book
             )
@@ -659,6 +665,7 @@ $app->get('/books', function (Request $request, Response $response, array $args)
             'iat' => $iat,
             'exp' => $iat + 3600, // Token valid for 1 hour
             "data" => array(
+               
                 "message" => "Books retrieved successfully",
                 "book_count" => count($books) // Include the count of retrieved books
             )
@@ -708,6 +715,7 @@ $app->post('/books_authors/add', function (Request $request, Response $response,
             'iat' => $iat,
             'exp' => $iat + 3600, // Token valid for 1 hour
             "data" => array(
+                
                 "message" => "Book-Author relationship added successfully",
                 "book_id" => $bookid,
                 "author_id" => $authorid
@@ -759,6 +767,7 @@ $app->put('/books_authors/update/{id}', function (Request $request, Response $re
             'iat' => $iat,
             'exp' => $iat + 3600, // Token valid for 1 hour
             "data" => array(
+                
                 "message" => "Book-Author relationship updated successfully",
                 "book_id" => $bookid,
                 "author_id" => $authorid
@@ -807,6 +816,7 @@ $app->delete('/books_authors/delete/{id}', function (Request $request, Response 
             'iat' => $iat,
             'exp' => $iat + 3600, // Token valid for 1 hour
             "data" => array(
+                
                 "message" => "Book-Author relationship deleted successfully",
                 "deleted_id" => $id
             )
@@ -852,6 +862,7 @@ $app->get('/books_authors', function (Request $request, Response $response, arra
             'iat' => $iat,
             'exp' => $iat + 3600, // Token valid for 1 hour
             "data" => array(
+                
                 "message" => "Fetched book-author associations successfully",
                 "count" => count($associations) // Optional: include the count of associations
             )

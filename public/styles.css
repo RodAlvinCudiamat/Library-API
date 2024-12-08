@@ -1,0 +1,168 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #35424a;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    font-size: 2em;
+}
+
+h1, h2 {
+    margin: 0;
+    font-weight: normal;
+}
+
+/* Main Content Styling */
+main {
+    padding: 20px;
+}
+
+/* Form Styling */
+form {
+    margin-bottom: 20px;
+}
+
+input, select {
+    padding: 10px;
+    margin: 5px 0;
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    cursor: pointer;
+}
+
+/* Button Styling */
+button {
+    padding: 12px 20px;
+    background-color: #35424a;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1em;
+    width: 100%;
+    max-width: 150px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Navigation Styles */
+nav {
+    margin: 20px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    margin: 5px 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #35424a;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #45a049;
+}
+
+/* Message Styling */
+#message {
+    color: red;
+    font-size: 1.1em;
+    margin: 15px 0;
+}
+
+/* Table Styling */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.data-table th, .data-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+    font-size: 1em;
+}
+
+.data-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.data-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.data-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Table Responsive Design */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    header {
+        font-size: 1.5em;
+    }
+
+    .data-table th, .data-table td {
+        padding: 10px;
+    }
+
+    input, select, button {
+        max-width: 100%;
+    }
+
+    button {
+        font-size: 1em;
+        width: 100%;
+    }
+}
+
+/* Footer Styling */
+footer {
+    background-color: #35424a;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Container for content */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
